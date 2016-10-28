@@ -2,8 +2,8 @@
 
 	//mysqli 関連の自作関数
 
-	function db_connect($db_name){
-		$linkid=mysqli_connect('localhost','twitter','twitter',$db_name);
+	function db_connect($server,$user,$pass,$db_name){
+		$linkid=mysqli_connect($server,$user,$pass,$db_name);
 		if(!$linkid) die("Failure mysqli_connect".mysqli_error($linkid));
 		mysqli_set_charset($linkid,"utf8");
 		return $linkid;
