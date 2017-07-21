@@ -1,0 +1,34 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Class1	Perl/Class1.pm	/^package Class1;$/;"	p
+aFET	PHP/mysqli_connection.php	/^		$aFET=array();$/;"	v
+aRSLT	PHP/mysqli_connection.php	/^		$aRSLT=array();$/;"	v
+aRSLT	PHP/mysqli_connection.php	/^		$aRSLT=db_a_query($aSQL,$linkid);$/;"	v
+connect	Perl/my_mysql/mysqli_connection.pm	/^sub connect{$/;"	s
+data	PHP/mysqli_connection.php	/^		$data=array();$/;"	v
+db_a_fetch_assoc	PHP/mysqli_connection.php	/^	function db_a_fetch_assoc($aSQL,$linkid){$/;"	f
+db_a_query	PHP/mysqli_connection.php	/^	function db_a_query($aSQL,$linkid){$/;"	f
+db_close	PHP/mysqli_connection.php	/^	function db_close($linkid){$/;"	f
+db_connect	PHP/mysqli_connection.php	/^	function db_connect($server,$user,$pass,$db_name){$/;"	f
+db_fetch	PHP/mysqli_connection.php	/^	function db_fetch($SQL,$linkid){$/;"	f
+db_fetch_assoc	Perl/my_mysql/mysqli_connection.pm	/^sub db_fetch_assoc{$/;"	s
+db_num_rows	PHP/mysqli_connection.php	/^	function db_num_rows($SQL,$linkid){$/;"	f
+db_query	PHP/mysqli_connection.php	/^	function db_query($SQL,$linkid){$/;"	f
+db_query	Perl/my_mysql/mysqli_connection.pm	/^sub db_query{$/;"	s
+disconnect	Perl/my_mysql/mysqli_connection.pm	/^sub disconnect{$/;"	s
+get	Perl/Class1.pm	/^sub get {$/;"	s
+i	PHP/mysqli_connection.php	/^		$i=0;$/;"	v
+linkid	PHP/mysqli_connection.php	/^		$linkid=mysqli_connect($server,$user,$pass,$db_name);$/;"	v
+my_mysql::mysqli_connection	Perl/my_mysql/mysqli_connection.pm	/^package my_mysql::mysqli_connection;$/;"	p
+new	Perl/Class1.pm	/^sub new {$/;"	s
+new	Perl/my_mysql/mysqli_connection.pm	/^sub new{$/;"	s
+num	PHP/mysqli_connection.php	/^		$num=mysqli_num_rows($rslt);$/;"	v
+plus	Perl/Class1.pm	/^sub plus{$/;"	s
+rslt	PHP/mysqli_connection.php	/^			$rslt=db_query($sql,$linkid);$/;"	v
+rslt	PHP/mysqli_connection.php	/^		$rslt=db_query($SQL,$linkid);$/;"	v
+rslt	PHP/mysqli_connection.php	/^		$rslt=mysqli_query($linkid,$SQL);$/;"	v
+set	Perl/Class1.pm	/^sub set {$/;"	s
