@@ -1,4 +1,4 @@
-package my_mysql::mysqli_connection;
+package mysqli_connection;
 
 use strict;
 use DBI;
@@ -36,8 +36,11 @@ sub db_query{
 
 	my $dbh=$self->{dbh};
 
+	# クエリー用意
+	$sth = $dbh->prepare($sql);
+
 	# クエリー発行
-	return $sth = $dbh->prepare($sql);
+	return $sth->execute();
 }
 
 # クエリー内容を実行
@@ -47,8 +50,13 @@ sub db_fetch_assoc{
 
 	my $query=&db_query($self,$sql);
 
-	my @data;
-	while($)
+	my @db_data;
+	while(my $ary_ref=$query->fetchrow_arrayref){
+		my @line=@$ary_ref;
+		push(@db_data,@line);
+	}
+
+	return @db_data;
 }
 
-1;
+1; # packageなので
