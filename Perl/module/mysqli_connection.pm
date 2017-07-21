@@ -1,12 +1,14 @@
 package mysqli_connection;
 
+use constant INIT => 0; # 初期化定数宣言 
+
 use strict;
 use DBI;
 
 sub new{
 	my $class=shift; # 1パラメータの内容はクラス名、ここでは Class1
 	my %self; #メンバ変数を保持する連想配列
-	
+	$self->{dbh}=INIT;
 	return belss $self,$class; #メンバ変数を保持する連想配列をクラス名に連携する
 }
 
@@ -37,7 +39,7 @@ sub db_query{
 	my $dbh=$self->{dbh};
 
 	# クエリー用意
-	$sth = $dbh->prepare($sql);
+	my $sth = $dbh->prepare($sql);
 
 	# クエリー発行
 	return $sth->execute();
