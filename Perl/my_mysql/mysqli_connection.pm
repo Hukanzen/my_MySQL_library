@@ -50,3 +50,5 @@ sub db_fetch_assoc{
 	my @data;
 	while($)
 }
+
+1;
