@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use lib './module';
-use my_mysqliconnction;
+use mysqli_connection;
 
 &main;
 
