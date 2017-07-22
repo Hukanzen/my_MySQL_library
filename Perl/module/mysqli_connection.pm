@@ -20,6 +20,10 @@ sub new{
 sub connect{
 	my $self=shift; # 第1引数は Class1 オブジェクト(メンバ変数を保持する連想配列)
 	my ($name,$host,$port,$user,$pass)=@_;
+	foreach(@_){
+		print $_."\n";
+	}
+	exit;
 	#my $dbh = DBI->connect("dbi:mysql:dbname=$DB_NAME;host=$DB_HOST;port=$DB_PORT","$DB_USER","$DB_PASS") or die "$!\n Error: failed to connect to DB.\n";
 	my $dbh = DBI->connect("dbi:mysql;dbname=".$name.";host=".$host.";port=".$port,$user,$pass) or die "$!\n Error: failed to connect to DB.\n"; # データベースハンドルオブジェクト
 	$self->{"dbh"}=$dbh;
