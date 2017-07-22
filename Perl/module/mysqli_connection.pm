@@ -5,6 +5,10 @@ use constant INIT => 0; # 初期化定数宣言
 use strict;
 use DBI;
 use Data::Dumper;
+{
+	local $Data::Dumper::Deparse = 1;
+	print Data::Dumper::Dumper $var;
+}
 
 sub new{
 	my $class=shift; # 1パラメータの内容はクラス名、ここでは Class1
@@ -37,7 +41,7 @@ sub db_query{
 	my ($self,$sql)=@_;
 
 	my $dbh=$self->{"dbh"};
-	print Data::Dumper->Dump($self);
+	print Dumper($self);
 	# クエリー用意
 	my $sth = $dbh->prepare($sql);
 
