@@ -6,7 +6,7 @@ use strict;
 use DBI;
 use Data::Dumper;
 {
-	local $Data::Dumper::Deparse = 1;
+	local $Data::Dumper::Deparse = 1; #リファレンスの中身をDumperで表示する
 	#print Data::Dumper::Dumper $var;
 }
 
@@ -37,8 +37,8 @@ sub disconnect{
 
 # クエリー出力
 sub db_query{
-	#my $self=shift;
-	my ($self,$sql)=@_;
+	my $self=shift;
+	my ($sql)=@_;
 
 	my $dbh=$self->{"dbh"};
 	print Dumper($self);
