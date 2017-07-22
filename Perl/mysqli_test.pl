@@ -8,7 +8,7 @@ use mysqli_connection;
 &main;
 
 sub main{
-	my $db_user=my_mysqliconnction->new("performance_schema","root","","","3306","users");
+	my $db_user=mysqliconnction->new("performance_schema","root","","","3306","users");
 
 	my @data=$db_user->db_fetch_assoc("SELECT * FROM users;");
 	
