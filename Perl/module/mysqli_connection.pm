@@ -4,10 +4,11 @@ use constant INIT => 0; # 初期化定数宣言
 
 use strict;
 use DBI;
+use Data::Dumper;
 
 sub new{
 	my $class=shift; # 1パラメータの内容はクラス名、ここでは Class1
-	my $self={dbh=>INIT}; #メンバ変数を保持する連想配列．ハッシュのリファレンス
+	my $self={dbh=>INIT}; #メンバ変数を保持する連想配列．無名ハッシュのリファレンス
 	return bless $self,$class; #メンバ変数を保持する連想配列をクラス名に連携する
 }
 
@@ -36,7 +37,7 @@ sub db_query{
 	my ($self,$sql)=@_;
 
 	my $dbh=$self->{dbh};
-
+print Data::Dumper->Dump($dbh);
 	# クエリー用意
 	my $sth = $dbh->prepare($sql);
 
