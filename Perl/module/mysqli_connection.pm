@@ -37,7 +37,7 @@ sub db_query{
 	my ($self,$sql)=@_;
 
 	my $dbh=$self->{"dbh"};
-	#rprint Data::Dumper->Dump($dbh);
+	print Data::Dumper->Dump($self);
 	# クエリー用意
 	my $sth = $dbh->prepare($sql);
 
