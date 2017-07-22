@@ -8,8 +8,8 @@ use DBI;
 sub new{
 	my $class=shift; # 1パラメータの内容はクラス名、ここでは Class1
 	my %self; #メンバ変数を保持する連想配列
-	$self->{dbh}=INIT;
-	return belss $self,$class; #メンバ変数を保持する連想配列をクラス名に連携する
+	%self->{dbh}=INIT;
+	return belss %self,$class; #メンバ変数を保持する連想配列をクラス名に連携する
 }
 
 # データベース接続
