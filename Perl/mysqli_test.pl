@@ -9,7 +9,7 @@ use mysqli_connection;
 
 sub main{
 	my $db_user=new mysqli_connection;
-	$db_user->connect("performance_schema","root","","","3306","users");
+	$db_user->connect("performance_schema","localhost","3306","root","");
 	my @data=$db_user->db_fetch_assoc("SELECT * FROM users;");
 	
 	$db_user->disconnect;
