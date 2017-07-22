@@ -8,8 +8,8 @@ use mysqli_connection;
 &main;
 
 sub main{
-	my $db_user=mysqli_connection->new("performance_schema","root","","","3306","users");
-
+	my $db_user=new mysqli_connection;
+	$db_user->connect("performance_schema","root","","","3306","users");
 	my @data=$db_user->db_fetch_assoc("SELECT * FROM users;");
 	
 	$db_user->disconnect;

@@ -1,0 +1,19 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Class1	Class1.pm	/^package Class1;$/;"	p
+INIT	module/mysqli_connection.pm	/^use constant INIT => 0; # 初期化定数宣言 $/;"	c
+connect	module/mysqli_connection.pm	/^sub connect{$/;"	s
+db_fetch_assoc	module/mysqli_connection.pm	/^sub db_fetch_assoc{$/;"	s
+db_query	module/mysqli_connection.pm	/^sub db_query{$/;"	s
+disconnect	module/mysqli_connection.pm	/^sub disconnect{$/;"	s
+get	Class1.pm	/^sub get {$/;"	s
+main	mysqli_test.pl	/^sub main{$/;"	s
+mysqli_connection	module/mysqli_connection.pm	/^package mysqli_connection;$/;"	p
+new	Class1.pm	/^sub new {$/;"	s
+new	module/mysqli_connection.pm	/^sub new{$/;"	s
+plus	Class1.pm	/^sub plus{$/;"	s
+set	Class1.pm	/^sub set {$/;"	s
