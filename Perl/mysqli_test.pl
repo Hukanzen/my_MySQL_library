@@ -9,8 +9,8 @@ use mysqli_connection;
 
 sub main{
 	my $db_user=my_mysqliconnction->new("performance_schema","root","","","3306","users");
-	
-	my @data=$db_user->db_fetch_assoc("SELECT * FROM $DB_TABLE;");
+
+	my @data=$db_user->db_fetch_assoc("SELECT * FROM users;");
 	
 	$db_user->disconnect;
 
