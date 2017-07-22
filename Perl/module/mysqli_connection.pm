@@ -22,6 +22,7 @@ sub connect{
 	my ($name,$host,$port,$user,$pass)=@_;
 	#my $dbh = DBI->connect("dbi:mysql:dbname=$DB_NAME;host=$DB_HOST;port=$DB_PORT","$DB_USER","$DB_PASS") or die "$!\n Error: failed to connect to DB.\n";
 	my $connect_str="dbi:mysql;dbname=".$name.";host=".$host.";port=".$port;
+	print $connect_str;
 	my $dbh = DBI->connect($connect_str,$user,$pass) or die "$!\n Error: failed to connect to DB.\n"; # データベースハンドルオブジェクト
 	$self->{"dbh"}=$dbh;
 	print $dbh;
