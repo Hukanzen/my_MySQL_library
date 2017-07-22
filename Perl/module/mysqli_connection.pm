@@ -7,7 +7,7 @@ use DBI;
 use Data::Dumper;
 {
 	local $Data::Dumper::Deparse = 1;
-	print Data::Dumper::Dumper $var;
+	#print Data::Dumper::Dumper $var;
 }
 
 sub new{
