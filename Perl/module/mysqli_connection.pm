@@ -18,7 +18,7 @@ sub connect{
 	my ($name,$host,$port,$user,$pass)=@_;
 	#my $dbh = DBI->connect("dbi:mysql:dbname=$DB_NAME;host=$DB_HOST;port=$DB_PORT","$DB_USER","$DB_PASS") or die "$!\n Error: failed to connect to DB.\n";
 	my $dbh = DBI->connect("dbi:mysql;dbname=".$name.";host=".$host.";port=".$port,$user,$pass) or die "$!\n Error: failed to connect to DB.\n"; # データベースハンドルオブジェクト
-	$self->{dbh}=$dbh;
+	$self->{"dbh"}=$dbh;
 
 	return 0;
 }
@@ -36,8 +36,8 @@ sub db_query{
 	#my $self=shift;
 	my ($self,$sql)=@_;
 
-	my $dbh=$self->{dbh};
-print Data::Dumper($dbh);
+	my $dbh=$self->{"dbh"};
+print Data::Dumper->Dump($dbh);
 	# クエリー用意
 	my $sth = $dbh->prepare($sql);
 
