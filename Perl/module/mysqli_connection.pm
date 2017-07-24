@@ -25,8 +25,8 @@ sub connect{
 	print $connect_str;
 	my $dbh = DBI->connect($connect_str,$user,$pass) or die "$!\n Error: failed to connect to DB.\n"; # データベースハンドルオブジェクト
 	$self->{"dbh"}=$dbh;
-	print $dbh;
-	print Dumper($self);
+	#print $dbh;
+	#print Dumper($self);
 	
 	return 0;
 }
@@ -46,8 +46,9 @@ sub db_query{
 
 	my $dbh=$self->{"dbh"};
 	print Dumper($self);
-	# クエリー用意
-	my $sth = $dbh->prepare($sql);
+	
+	# クエリー発行
+	return $dbh->prepare($sql);
 
 	# クエリー発行
 	return $sth->execute();
@@ -58,10 +59,13 @@ sub db_fetch_assoc{
 	my $self=shift;
 	my ($sql)=@_;
 
-	my $query=&db_query($self,$sql);
+	my $sth=&db_query($self,$sql);
+
+	# クエリー実行
+	$sth->execute();
 
 	my @db_data;
-	while(my $ary_ref=$query->fetchrow_arrayref){
+	while(my $ary_ref=$sth->fetchrow_arrayref){
 		my @line=@$ary_ref;
 		push(@db_data,@line);
 	}
