@@ -4,6 +4,11 @@ use strict;
 use warnings;
 use lib './module';
 use mysqli_connection;
+use Data::Dumper;
+{
+	local $Data::Dumper::Deparse = 0; #リファレンスの中身をDumperで表示する
+	#print Data::Dumper::Dumper $var;
+}
 
 &main;
 
@@ -15,6 +20,7 @@ sub main{
 	$db_user->disconnect;
 
 	foreach(@data){
-		print $_."\n";
+		#print $_."\n";
+		print Dumper $_;
 	}
 }
