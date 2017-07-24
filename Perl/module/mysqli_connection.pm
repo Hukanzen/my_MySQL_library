@@ -51,7 +51,7 @@ sub db_query{
 	return $dbh->prepare($sql);
 
 	# クエリー発行
-	return $sth->execute();
+	#return $sth->execute();
 }
 
 # クエリー内容を実行
