@@ -69,7 +69,7 @@ sub db_fetch_assoc{
 		my @line=@$ary_ref;
 		push(\@db_data,\@line);
 	}
-	print Dumper @db_data;
+	#print Dumper @db_data;
 	return @db_data;
 }
 
