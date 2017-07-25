@@ -20,10 +20,11 @@ sub set {
   $self->{value} = shift; # 連想配列のメンバ 'value' の値を変更する。
 }
 
+# 既にある値に，引数の2つの値を加算する．
 sub plus{
-	my $self=shift;
-	my ($x,$y)=@_;
-	$self->{value}+=($x+$y);
+	my $self=shift;  # 第１引数は Class1 オブジェクト(メンバ変数を保持する連想配列)
+	my ($x,$y)=@_;  # 引数2つを変数($x,$y)に代入
+	$self->{value}+=($x+$y); # 加算する
 
 }
 
