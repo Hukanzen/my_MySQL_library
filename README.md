@@ -14,7 +14,7 @@
 ## Perl
 * `use_Sample.pl` と，`db_Sample.pl` を実行し，比べてみてください．
 
-* Perlの実行結果(for loopで1つずつ出力)
+* Perlの実行結果
 ```bash
 $VAR1 = [
           'UNKNOWN_MYSQL_US',
@@ -29,7 +29,7 @@ $VAR2 = [
 $VAR3 = [
           'root',
           '1',
-          '5'
+          '3'
         ];
 ```
 ## PHP
