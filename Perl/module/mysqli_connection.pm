@@ -67,7 +67,7 @@ sub db_fetch_assoc{
 	my @db_data;
 	while(my $ary_ref=$sth->fetchrow_arrayref){
 		my @line=@$ary_ref;
-		push(@db_data,@line);
+		push(\@db_data,\@line);
 	}
 	print Dumper @db_data;
 	return @db_data;
