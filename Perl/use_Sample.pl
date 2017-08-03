@@ -12,11 +12,16 @@ use Data::Dumper;
 &main;
 
 sub main{
-	my $db_user=new mysqli_connection;
+	my $db_user=mysqli_connection->new;
 	$db_user->connect("performance_schema","localhost","3306","root","");
 	my @data=$db_user->db_fetch_assoc("SELECT * FROM users;");
 	
 	$db_user->disconnect;
-	
-	print Dumper @data;
+
+	#print Dumper @data;
+
+	foreach(@data){
+		#print "$_->[0]"."\n";
+		print "$_->{TOTAL_CONNECTIONS}"."\n";
+	}
 }
