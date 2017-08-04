@@ -40,5 +40,3 @@ $VAR3 = [
 Twitterが一番捕まりやすいです．[@AkihisaYoshii4](https://twitter.com/AkihisaYoshii4)
 
 PHP:PDO版も製作予定。
-
-git commit

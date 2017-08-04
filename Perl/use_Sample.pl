@@ -14,7 +14,7 @@ use Data::Dumper;
 sub main{
 	my $db_user=mysqli_connection->new;
 	$db_user->connect("performance_schema","localhost","3306","root","");
-	my @data=$db_user->db_fetch_assoc("SELECT * FROM users;");
+	my @data=$db_user->db_fetch_assoc_hash("SELECT * FROM users;");
 	
 	$db_user->disconnect;
 
