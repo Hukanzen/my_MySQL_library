@@ -1,4 +1,5 @@
 ﻿# MySQL connection Library.
+https://github.com/Hukanzen/my_MySQL_library
 
 * MySQL を PHP,Perl から操作する関数やClassが非常に自分に合わなかったので、魔改造したものです。
 
@@ -40,5 +41,3 @@ $VAR3 = [
 Twitterが一番捕まりやすいです．[@AkihisaYoshii4](https://twitter.com/AkihisaYoshii4)
 
 PHP:PDO版も製作予定。
-
-git commit

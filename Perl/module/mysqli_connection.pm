@@ -1,13 +1,14 @@
 #package my_MySQL_library::Perl::module::mysqli_connection;
 package mysqli_connection;
 
-use constant INIT => 0; # 初期化定数宣言 
+use constant INIT => 0; # 定数宣言 
+use constant TRUE => 1;
 
 use strict;
 use DBI;
 use Data::Dumper;
 {
-	local $Data::Dumper::Deparse = 1; #リファレンスの中身をDumperで表示する
+	local $Data::Dumper::Deparse = TRUE; #リファレンスの中身をDumperで表示する
 }
 
 sub new{
@@ -21,7 +22,6 @@ sub connect{
 	my $self=shift; # 第1引数は Class1 オブジェクト(メンバ変数を保持する連想配列)
 	my ($name,$host,$port,$user,$pass)=@_;
 	my $connect_str="dbi:mysql:dbname=".$name.";host=".$host.";port=".$port;
-	#print $connect_str;
 	my $dbh = DBI->connect($connect_str,$user,$pass) or die "$!\n Error: failed to connect to DB.\n"; # データベースハンドルオブジェクト
 	$self->{"dbh"}=$dbh;
 	
@@ -36,6 +36,17 @@ sub disconnect{
 	return $dbh->disconnect;
 }
 
+# 返しがいらないもの
+sub db_do
+{
+	my $self=shift;
+	my ($sql)=@_;
+
+	my $dbh=$self->{"dbh"};
+
+	return $dbh->do($sql);
+}
+
 # クエリー出力
 sub db_query{
 	my $self=shift;
@@ -48,8 +59,8 @@ sub db_query{
 	return $dbh->prepare($sql);
 }
 
-# クエリー内容を実行
-sub db_fetch_assoc{
+# クエリー内容を実行し，hashで返す
+sub db_fetch_assoc_hash{
 	my $self=shift;
 	my ($sql)=@_;
 
@@ -64,13 +75,50 @@ sub db_fetch_assoc{
 		my %line=%$hash_ref;
 		push(\@db_data,\%line);
 	}
+
+	#print Dumper @db_data;
+	return @db_data;
+}
+
+# クエリー内容を実行し，arrayで返す
+sub db_fetch_assoc_array{
+	my $self=shift;
+	my ($sql)=@_;
+
+	my $sth=&db_query($self,$sql);
+
+	# クエリー実行
+	$sth->execute();
+
+	my @db_data;
 	# array として，保存する
-	#while(my $ary_ref=$sth->fetchrow_arrayref){
-	#	my @line=@$ary_ref;
-	#	push(\@db_data,\@line);
-	#}
+	while(my $ary_ref=$sth->fetchrow_arrayref){
+		my @line=@$ary_ref;
+		push(\@db_data,\@line);
+	}
+	
 	print Dumper @db_data;
 	return @db_data;
+}
+
+
+# 再利用性の低い関数
+sub value_all_do
+{
+	my $self=shift;
+	my ($table,$ref_value)=@_;
+	
+	my $sql1="INSERT INTO ".$table." VALUES(";
+	my $sql2="";
+	foreach(@$ref_value){
+		$sql2.=$_.",";
+	}
+	my $sql3=");";
+
+	my $sql=$sql1.$sql2.$sql3;
+
+	&db_do($sql);
+
 }
 
 1; # packageなので
