@@ -101,7 +101,6 @@ sub db_fetch_assoc_array{
 	return @db_data;
 }
 
-
 # 再利用性の低い関数
 sub value_all_do
 {
@@ -120,5 +119,4 @@ sub value_all_do
 	&db_do($sql);
 
 }
-
 1; # packageなので

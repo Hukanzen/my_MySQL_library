@@ -37,5 +37,4 @@ sub main{
 	# 結果出力
 	print Dumper @data_hash;
 	print Dumper @data_array;
-
 }
