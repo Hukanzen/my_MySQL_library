@@ -97,7 +97,7 @@ sub db_fetch_assoc_array{
 		push(\@db_data,\@line);
 	}
 	
-	print Dumper @db_data;
+	#print Dumper @db_data;
 	return @db_data;
 }
 
@@ -116,7 +116,7 @@ sub value_all_do
 
 	my $sql=$sql1.$sql2.$sql3;
 
-	&db_do($sql);
+	&db_do($self,$sql);
 
 }
 1; # packageなので
