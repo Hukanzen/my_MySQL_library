@@ -1,12 +1,15 @@
 <?php
-
+class mysqli_connection
+{
 	//mysqli 関連の自作関数
-
-	function db_connect($server,$user,$pass,$db_name){
+	private $pri_linkid;
+	
+	public function db_connect($server,$user,$pass,$db_name){
 		$linkid=mysqli_connect($server,$user,$pass,$db_name);
 		if(!$linkid) die("Failure mysqli_connect".mysqli_error($linkid));
 		mysqli_set_charset($linkid,"utf8");
-		return $linkid;
+		//return $linkid;
+		self::$pri_linkid=$linkid;
 	}
 
 //	function db_select($linkid){
@@ -65,4 +68,5 @@
 	function db_close($linkid){
 		mysqli_close($linkid);
 	}
+}
 ?>
