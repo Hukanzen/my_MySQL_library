@@ -88,5 +88,9 @@ class mysqli_connection
 	public function db_close($linkid){
 		mysqli_close($linkid);
 	}
+
+	public function __destruct(){
+		$this->db_close();
+	}
 }
 ?>
