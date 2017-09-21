@@ -42,7 +42,8 @@ class mysqli_connection
 		return $num;
 	}
 
-	function db_fetch($SQL,$linkid){
+	/* SQL文を投げて，データを取得し，配列で返す */
+	public function db_fetch($SQL,$linkid){
 		$data=array();
 		$rslt=db_query($SQL,$linkid);
 		while($fet=mysqli_fetch_assoc($rslt)){
@@ -51,14 +52,18 @@ class mysqli_connection
 		return $data;
 	}
 
-	function db_a_query($aSQL,$linkid){
+	/* 配列のSQL文を投げて，クエリを取得し，配列で返す */
+	public function db_a_query($aSQL,$linkid){
 		$aRSLT=array();
 		foreach($aSQL as $sql){
 			$rslt=db_query($sql,$linkid);
+			/* db_queryで行う */
+			/*
 			if(!$rslt){
 				die("$sql is Failure.".mysqli_error($linkid));
 				break;
 			}
+			*/
 			array_push($aRSLT,$rslt);
 		}
 		return $aRSLT;
