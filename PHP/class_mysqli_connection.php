@@ -84,7 +84,8 @@ class mysqli_connection
 		return $aFET;
 	}
 
-	function db_close($linkid){
+	/* DBとの接続を切断する */
+	public function db_close($linkid){
 		mysqli_close($linkid);
 	}
 }
