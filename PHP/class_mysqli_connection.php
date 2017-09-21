@@ -71,8 +71,8 @@ class mysqli_connection
 	}
 
 	/* 配列のSQL文を投げて，データを取得し，配列で返す*/
-	public function db_a_fetch_assoc($aSQL,$linkid){
-		$aRSLT=db_a_query($aSQL,$linkid);
+	public function db_a_fetch_assoc($aSQL){
+		$aRSLT=db_a_query($aSQL);
 		$aFET=array();
 		$i=0;
 		foreach($aRSLT as $rslt){
