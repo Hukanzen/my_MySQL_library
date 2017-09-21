@@ -54,10 +54,10 @@ class mysqli_connection
 	}
 
 	/* 配列のSQL文を投げて，クエリを取得し，配列で返す */
-	public function db_a_query($aSQL,$linkid){
+	public function db_a_query($aSQL){
 		$aRSLT=array();
 		foreach($aSQL as $sql){
-			$rslt=db_query($sql,$linkid);
+			$rslt=db_query($sql);
 			/* db_queryで行う */
 			/*
 			if(!$rslt){
