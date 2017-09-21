@@ -25,14 +25,6 @@ class mysqli_connection
 		$this->$pri_linkid=$linkid;
 	}
 
-
-
-
-//	function db_select($linkid){
-//		$db_rslt=mysqli_select_db('mecab',$linkid);
-//		if(!$db_rslt) die("Failure select db".mysqli_error($linkid));
-//	}
-
 	function db_query($SQL,$linkid){
 		$rslt=mysqli_query($linkid,$SQL);
 		if(!$rslt) die("$SQL is Failure".mysqli_error($linkid));
