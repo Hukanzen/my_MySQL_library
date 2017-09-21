@@ -69,12 +69,13 @@ class mysqli_connection
 		return $aRSLT;
 	}
 
-	function db_a_fetch_assoc($aSQL,$linkid){
+	/* 配列のSQL文を投げて，データを取得し，配列で返す*/
+	public function db_a_fetch_assoc($aSQL,$linkid){
 		$aRSLT=db_a_query($aSQL,$linkid);
 		$aFET=array();
 		$i=0;
 		foreach($aRSLT as $rslt){
-				array_push($aFET,array());
+			array_push($aFET,array());
 			while($fet=mysqli_fetch_assoc($rslt)){
 				array_push($aFET[$i],$fet);
 			}
