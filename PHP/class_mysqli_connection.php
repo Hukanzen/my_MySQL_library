@@ -3,8 +3,9 @@ class mysqli_connection
 {
 	//mysqli 関連の自作関数
 	private $pri_linkid;
-	
-	public function db_connect($server,$user,$pass,$db_name){
+
+	// public function db_connect($server,$user,$pass,$db_name){
+	public function __construct($server,$user,$pass,$db_name){
 		$linkid=mysqli_connect($server,$user,$pass,$db_name);
 		if(!$linkid) die("Failure mysqli_connect".mysqli_error($linkid));
 		mysqli_set_charset($linkid,"utf8");
