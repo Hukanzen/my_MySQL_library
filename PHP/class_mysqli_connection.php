@@ -44,9 +44,9 @@ class mysqli_connection
 	}
 
 	/* SQL文を投げて，データを取得し，配列で返す */
-	public function db_fetch($SQL,$linkid){
+	public function db_fetch($SQL){
 		$data=array();
-		$rslt=db_query($SQL,$linkid);
+		$rslt=db_query($SQL);
 		while($fet=mysqli_fetch_assoc($rslt)){
 			array_push($data,$fet);
 		}
