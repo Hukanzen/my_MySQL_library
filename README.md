@@ -5,6 +5,56 @@ https://github.com/Hukanzen/my_MySQL_library
 
 * そこまで大したものでは、ありません。
 
+## 利点
+* 
+<pre>
+
+BEGIN
+
+構文組み立て
+
+接続
+
+while(データを持ってくる){
+
+    持ってきたデータを処理する
+
+}
+
+切断
+
+END
+
+</pre>
+
+上記のようなプログラムを下記の様に書けます．
+
+<pre>
+
+BEGIN
+
+構文組み立て
+
+接続
+
+データを変数に代入
+
+切断
+
+foreach(変数){
+
+    変数内のデータを処理する
+
+}
+
+END
+
+</pre>
+
+* DBとの接続時間を減らせます
+
+
+
 ## DBのサンプル
 |USER | CURRENT_CONNECTIONS | TOTAL_CONNECTIONS|
 |-----|---------------------|------------------|
