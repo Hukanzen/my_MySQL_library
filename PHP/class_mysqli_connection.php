@@ -7,7 +7,7 @@ class mysqli_connection
 {
 	/* mysqli 関連の自作関数 */
 	/* リンクid */
-	private $pri_linkid;
+	private $pri_lid;
 
 	/* コンストラクタ．全て埋まる指定があれば，DBと接続する */
 	public function __construct($server,$user,$pass,$db_name){
@@ -23,11 +23,12 @@ class mysqli_connection
 		/* 文字コードの指定 */
 		mysqli_set_charset($linkid,"utf8");
 		//return $linkid;
-		$this->$pri_linkid=$linkid;
+		$this->$pri_lid=$linkid;
 	}
 
 	/* クエリの作成 */
-	public function db_query($SQL,$linkid){
+	public function db_query($SQL){
+		$linkid=$this->$pri_lid;
 		/* エスケープ */
 		$SQL=mysqli_real_escape_string($linkid,$SQL);
 		$rslt=mysqli_query($linkid,$SQL);
