@@ -20,12 +20,16 @@ class mysqli_connection
 	public function db_connect($server,$user,$pass,$db_name){
 		$linkid=mysqli_connect($server,$user,$pass,$db_name);
 		if(!$linkid) die("Failure mysqli_connect".mysqli_error($linkid));
+		/* 文字コードの指定 */
 		mysqli_set_charset($linkid,"utf8");
 		//return $linkid;
 		$this->$pri_linkid=$linkid;
 	}
 
-	function db_query($SQL,$linkid){
+	/* クエリの作成 */
+	public function db_query($SQL,$linkid){
+		/* エスケープ */
+		$SQL=mysqli_real_escape_string($linkid,$SQL);
 		$rslt=mysqli_query($linkid,$SQL);
 		if(!$rslt) die("$SQL is Failure".mysqli_error($linkid));
 		return $rslt;
