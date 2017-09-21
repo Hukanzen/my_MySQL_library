@@ -57,7 +57,7 @@ class mysqli_connection
 	public function db_a_query($aSQL){
 		$aRSLT=array();
 		foreach($aSQL as $sql){
-			$rslt=db_query($sql);
+			$rslt=$this->db_query($sql);
 			/* db_queryで行う */
 			/*
 			if(!$rslt){
