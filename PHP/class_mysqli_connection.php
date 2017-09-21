@@ -23,12 +23,12 @@ class mysqli_connection
 		/* 文字コードの指定 */
 		mysqli_set_charset($linkid,"utf8");
 		//return $linkid;
-		$this->$pri_lid=$linkid;
+		$this->pri_lid=$linkid;
 	}
 
 	/* クエリの作成 */
 	public function db_query($SQL){
-		$linkid=$this->$pri_lid;
+		$linkid=$this->pri_lid;
 		/* エスケープ */
 		$SQL=mysqli_real_escape_string($linkid,$SQL);
 		$rslt=mysqli_query($linkid,$SQL);
@@ -86,8 +86,8 @@ class mysqli_connection
 	}
 
 	/* DBとの接続を切断する */
-	public function db_close($linkid){
-		mysqli_close($linkid);
+	public function db_close(){
+		mysqli_close($this->pri_lid);
 	}
 
 	public function __destruct(){
