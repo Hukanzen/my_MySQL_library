@@ -1,4 +1,4 @@
-﻿# MySQL connection Library.
+# MySQL connection Library.
 https://github.com/Hukanzen/my_MySQL_library
 
 * MySQL を PHP,Perl から操作する関数やClassが非常に自分に合わなかったので、魔改造したものです。
