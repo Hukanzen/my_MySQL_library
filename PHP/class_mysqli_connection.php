@@ -1,6 +1,6 @@
 <?php
 /* 
-    未完成
+    サンプルは動いた 2017/09/22 6:04
             */
 
 class mysqli_connection
