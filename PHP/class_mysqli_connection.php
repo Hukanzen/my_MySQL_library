@@ -37,8 +37,8 @@ class mysqli_connection
 	}
 
 	/* SQL文で取得できるデータの個数を返す．*/
-	public function db_num_rows($SQL,$linkid){
-		$rslt=db_query($SQL,$linkid);
+	public function db_num_rows($SQL){
+		$rslt=db_query($SQL);
 		$num=mysqli_num_rows($rslt);
 		return $num;
 	}
