@@ -1,17 +1,32 @@
 <?php
+/* 
+    未完成
+            */
+
 class mysqli_connection
 {
-	//mysqli 関連の自作関数
+	/* mysqli 関連の自作関数 */
+	/* リンクid */
 	private $pri_linkid;
 
-	// public function db_connect($server,$user,$pass,$db_name){
+	/* コンストラクタ．全て埋まる指定があれば，DBと接続する */
 	public function __construct($server,$user,$pass,$db_name){
+		if(isset($server) and isset($user) and isset($pass) and isset($db_name)){
+			$this->db_connect($server,$user,$pass,$db_name);	
+		}
+	}
+
+	/* DBと接続 */
+	public function db_connect($server,$user,$pass,$db_name){
 		$linkid=mysqli_connect($server,$user,$pass,$db_name);
 		if(!$linkid) die("Failure mysqli_connect".mysqli_error($linkid));
 		mysqli_set_charset($linkid,"utf8");
 		//return $linkid;
-		self::$pri_linkid=$linkid;
+		$this->$pri_linkid=$linkid;
 	}
+
+
+
 
 //	function db_select($linkid){
 //		$db_rslt=mysqli_select_db('mecab',$linkid);
