@@ -1,0 +1,96 @@
+$VAR1 = bless( {
+                 'dbh' => bless( {}, 'DBI::db' )
+               }, 'mysqli_connection' );
+$VAR1 = bless( {
+                 'dbh' => bless( {}, 'DBI::db' )
+               }, 'mysqli_connection' );
+$VAR1 = {
+          'Atten_No' => '1',
+          'Sei' => 'f241a0d218',
+          'Class' => 'IT',
+          'Mei' => 'e804e0691d',
+          'Sex' => '0',
+          'Grade' => '5',
+          'Stu_Num' => '13285'
+        };
+$VAR2 = {
+          'Atten_No' => '2',
+          'Sei' => '01104db175',
+          'Class' => 'IT',
+          'Mei' => '367d3ce66c',
+          'Sex' => '1',
+          'Grade' => '5',
+          'Stu_Num' => '13286'
+        };
+$VAR3 = {
+          'Atten_No' => '3',
+          'Sei' => '2219490abf',
+          'Class' => 'IT',
+          'Mei' => '454d5f7754',
+          'Sex' => '1',
+          'Grade' => '5',
+          'Stu_Num' => '13287'
+        };
+$VAR4 = {
+          'Atten_No' => '4',
+          'Sei' => 'b9590ee820',
+          'Class' => 'IT',
+          'Mei' => 'f7ae192c37',
+          'Sex' => '1',
+          'Grade' => '5',
+          'Stu_Num' => '13288'
+        };
+$VAR5 = {
+          'Atten_No' => '5',
+          'Sei' => '612902a5d3',
+          'Class' => 'IT',
+          'Mei' => 'f66307f398',
+          'Sex' => '1',
+          'Grade' => '5',
+          'Stu_Num' => '13289'
+        };
+$VAR1 = {
+          'Atten_No' => '1',
+          'Sei' => 'f241a0d218',
+          'Class' => 'IT',
+          'Mei' => 'e804e0691d',
+          'Sex' => '0',
+          'Grade' => '5',
+          'Stu_Num' => '13285'
+        };
+$VAR2 = {
+          'Atten_No' => '2',
+          'Sei' => '01104db175',
+          'Class' => 'IT',
+          'Mei' => '367d3ce66c',
+          'Sex' => '1',
+          'Grade' => '5',
+          'Stu_Num' => '13286'
+        };
+$VAR3 = {
+          'Atten_No' => '3',
+          'Sei' => '2219490abf',
+          'Class' => 'IT',
+          'Mei' => '454d5f7754',
+          'Sex' => '1',
+          'Grade' => '5',
+          'Stu_Num' => '13287'
+        };
+$VAR4 = {
+          'Atten_No' => '4',
+          'Sei' => 'b9590ee820',
+          'Class' => 'IT',
+          'Mei' => 'f7ae192c37',
+          'Sex' => '1',
+          'Grade' => '5',
+          'Stu_Num' => '13288'
+        };
+$VAR5 = {
+          'Atten_No' => '5',
+          'Sei' => '612902a5d3',
+          'Class' => 'IT',
+          'Mei' => 'f66307f398',
+          'Sex' => '1',
+          'Grade' => '5',
+          'Stu_Num' => '13289'
+        };
