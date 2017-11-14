@@ -38,7 +38,7 @@ class mysqli_connection
 
 	/* SQL文で取得できるデータの個数を返す．*/
 	public function db_num_rows($SQL){
-		$rslt=db_query($SQL);
+		$rslt=$this->db_query($SQL);
 		$num=mysqli_num_rows($rslt);
 		return $num;
 	}
@@ -46,7 +46,7 @@ class mysqli_connection
 	/* SQL文を投げて，データを取得し，配列で返す */
 	public function db_fetch($SQL){
 		$data=array();
-		$rslt=db_query($SQL);
+		$rslt=$this->db_query($SQL);
 		while($fet=mysqli_fetch_assoc($rslt)){
 			array_push($data,$fet);
 		}
