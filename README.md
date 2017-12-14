@@ -54,37 +54,22 @@ END
 * DBとの接続時間を減らせます
 
 
-
-## DBのサンプル
-|USER | CURRENT_CONNECTIONS | TOTAL_CONNECTIONS|
-|-----|---------------------|------------------|
-| UNKNOWN_MYSQL_US |                   0 |                 1 |
-| NULL             |                  18 |                20 |
-| root             |                   1 |                 3 |
-
 ## Perl
 * `use_Sample.pl` と，`db_Sample.pl` を実行し，比べてみてください．
 
-* Perlの実行結果
-```bash
-$VAR1 = [
-          'UNKNOWN_MYSQL_US',
-          '0',
-          '1'
-        ];
-$VAR2 = [
-          undef,
-          '18',
-          '20'
-        ];
-$VAR3 = [
-          'root',
-          '1',
-          '3'
-        ];
-```
+* Perlの実行結果<br>
+<table>
+    <tr><td><pre>$ perl use_Sample.pl > perl_sample.txt</pre></td><td><a href=Perl/perl_sample.txt>perl_sample.txt</a></td></tr>
+</table>
+
 ## PHP
 * 各関数を使ってみてください．
+
+* PHPの実行結果
+<table>
+    <tr><td><pre>$ php sample.php > php_sample.txt</pre></td><td><a href="PHP/php_sample.txt">php_sample.txt</td></tr>
+    <tr><td><pre>$ php class_sample.php > php_class_sample.txt</pre></td><td><a href="PHP/php_class_sample.txt">php_class_sample.txt</td></tr>
+</table>
 
 
 # 連絡先
