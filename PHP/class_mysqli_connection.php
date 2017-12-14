@@ -26,11 +26,16 @@ class mysqli_connection
 		$this->pri_lid=$linkid;
 	}
 
+	/* エスケープ */
+	public function escape_string($SQL){
+		$linkid=$this->pri_lid;
+		$SQL=mysqli_real_escape_string($linkid,$SQL);
+		return $SQL;
+	}
+
 	/* クエリの作成 */
 	public function db_query($SQL){
 		$linkid=$this->pri_lid;
-		/* エスケープ */
-		$SQL=mysqli_real_escape_string($linkid,$SQL);
 		$rslt=mysqli_query($linkid,$SQL);
 		if(!$rslt) die("$SQL is Failure".mysqli_error($linkid));
 		return $rslt;
@@ -95,3 +100,4 @@ class mysqli_connection
 	}
 }
 ?>
+

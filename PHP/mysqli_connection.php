@@ -16,6 +16,11 @@
 //		if(!$db_rslt) die("Failure select db".mysqli_error($linkid));
 //	}
 
+	function escape_string($SQL,$linkid){
+		$SQL=mysqli_real_escape_string($linkid,$SQL);
+		return $SQL;
+	}
+
 	/* クエリの作成 */
 	function db_query($SQL,$linkid){
 		$rslt=mysqli_query($linkid,$SQL);
@@ -74,3 +79,4 @@
 		mysqli_close($linkid);
 	}
 ?>
+
