@@ -1,0 +1,71 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Class1	Perl/Class1.pm	/^package Class1;$/;"	p
+INIT	Perl/module/mysqli_connection.pm	/^use constant INIT => 0; # 定数宣言 $/;"	c
+SQL	PHP/class_mysqli_connection.php	/^		$SQL=mysqli_real_escape_string($linkid,$SQL);$/;"	v
+SQL	PHP/mysqli_connection.php	/^		$SQL=mysqli_real_escape_string($linkid,$SQL);$/;"	v
+TRUE	Perl/module/mysqli_connection.pm	/^use constant TRUE => 1;$/;"	c
+__construct	PHP/class_mysqli_connection.php	/^	public function __construct($server,$user,$pass,$db_name){$/;"	f
+__destruct	PHP/class_mysqli_connection.php	/^	public function __destruct(){$/;"	f
+aFET	PHP/class_mysqli_connection.php	/^		$aFET=array();$/;"	v
+aFET	PHP/mysqli_connection.php	/^		$aFET=array();$/;"	v
+aRSLT	PHP/class_mysqli_connection.php	/^		$aRSLT=$this->db_a_query($aSQL);$/;"	v
+aRSLT	PHP/class_mysqli_connection.php	/^		$aRSLT=array();$/;"	v
+aRSLT	PHP/mysqli_connection.php	/^		$aRSLT=array();$/;"	v
+aRSLT	PHP/mysqli_connection.php	/^		$aRSLT=db_a_query($aSQL,$linkid);$/;"	v
+connect	Perl/module/mysqli_connection.pm	/^sub connect{$/;"	s
+data	PHP/class_mysqli_connection.php	/^		$data=array();$/;"	v
+data	PHP/mysqli_connection.php	/^		$data=array();$/;"	v
+db_a_fetch_assoc	PHP/class_mysqli_connection.php	/^	public function db_a_fetch_assoc($aSQL){$/;"	f
+db_a_fetch_assoc	PHP/mysqli_connection.php	/^	function db_a_fetch_assoc($aSQL,$linkid){$/;"	f
+db_a_query	PHP/class_mysqli_connection.php	/^	public function db_a_query($aSQL){$/;"	f
+db_a_query	PHP/mysqli_connection.php	/^	function db_a_query($aSQL,$linkid){$/;"	f
+db_close	PHP/class_mysqli_connection.php	/^	public function db_close(){$/;"	f
+db_close	PHP/mysqli_connection.php	/^	function db_close($linkid){$/;"	f
+db_connect	PHP/class_mysqli_connection.php	/^	public function db_connect($server,$user,$pass,$db_name){$/;"	f
+db_connect	PHP/mysqli_connection.php	/^	function db_connect($server,$user,$pass,$db_name){$/;"	f
+db_do	Perl/module/mysqli_connection.pm	/^sub db_do$/;"	s
+db_fetch	PHP/class_mysqli_connection.php	/^	public function db_fetch($SQL){$/;"	f
+db_fetch	PHP/mysqli_connection.php	/^	function db_fetch($SQL,$linkid){$/;"	f
+db_fetch_assoc_array	Perl/module/mysqli_connection.pm	/^sub db_fetch_assoc_array{$/;"	s
+db_fetch_assoc_hash	Perl/module/mysqli_connection.pm	/^sub db_fetch_assoc_hash{$/;"	s
+db_num_rows	PHP/class_mysqli_connection.php	/^	public function db_num_rows($SQL){$/;"	f
+db_num_rows	PHP/mysqli_connection.php	/^	function db_num_rows($SQL,$linkid){$/;"	f
+db_query	PHP/class_mysqli_connection.php	/^	public function db_query($SQL){$/;"	f
+db_query	PHP/mysqli_connection.php	/^	function db_query($SQL,$linkid){$/;"	f
+db_query	Perl/module/mysqli_connection.pm	/^sub db_query{$/;"	s
+db_rslt	PHP/mysqli_connection.php	/^\/\/		$db_rslt=mysqli_select_db('mecab',$linkid);$/;"	v
+db_select	PHP/mysqli_connection.php	/^\/\/	function db_select($linkid){$/;"	f
+disconnect	Perl/module/mysqli_connection.pm	/^sub disconnect{$/;"	s
+escape_string	PHP/class_mysqli_connection.php	/^	public function escape_string($SQL){$/;"	f
+escape_string	PHP/mysqli_connection.php	/^	function escape_string($SQL,$linkid){$/;"	f
+get	Perl/Class1.pm	/^sub get {$/;"	s
+i	PHP/class_mysqli_connection.php	/^		$i=0;$/;"	v
+i	PHP/mysqli_connection.php	/^		$i=0;$/;"	v
+linkid	PHP/class_mysqli_connection.php	/^		$linkid=$this->pri_lid;$/;"	v
+linkid	PHP/class_mysqli_connection.php	/^		$linkid=mysqli_connect($server,$user,$pass,$db_name);$/;"	v
+linkid	PHP/mysqli_connection.php	/^		$linkid=mysqli_connect($server,$user,$pass,$db_name);$/;"	v
+linkid	PHP/sample.php	/^$linkid=db_connect("localhost","test_user","password","test_db");$/;"	v
+main	Perl/use_Sample.pl	/^sub main{$/;"	s
+mysqli	PHP/class_sample.php	/^$mysqli=new mysqli_connection("localhost","test_user","password","test_db");$/;"	v
+mysqli_connection	PHP/class_mysqli_connection.php	/^class mysqli_connection$/;"	c
+mysqli_connection	Perl/module/mysqli_connection.pm	/^package mysqli_connection;$/;"	p
+new	Perl/Class1.pm	/^sub new {$/;"	s
+new	Perl/module/mysqli_connection.pm	/^sub new{$/;"	s
+num	PHP/class_mysqli_connection.php	/^		$num=mysqli_num_rows($rslt);$/;"	v
+num	PHP/mysqli_connection.php	/^		$num=mysqli_num_rows($rslt);$/;"	v
+plus	Perl/Class1.pm	/^sub plus{$/;"	s
+pri_lid	PHP/class_mysqli_connection.php	/^		$this->pri_lid=$linkid;$/;"	v
+pri_lid	PHP/class_mysqli_connection.php	/^	private $pri_lid;$/;"	v
+rslt	PHP/class_mysqli_connection.php	/^			$rslt=$this->db_query($sql);$/;"	v
+rslt	PHP/class_mysqli_connection.php	/^		$rslt=$this->db_query($SQL);$/;"	v
+rslt	PHP/class_mysqli_connection.php	/^		$rslt=mysqli_query($linkid,$SQL);$/;"	v
+rslt	PHP/mysqli_connection.php	/^			$rslt=db_query($sql,$linkid);$/;"	v
+rslt	PHP/mysqli_connection.php	/^		$rslt=db_query($SQL,$linkid);$/;"	v
+rslt	PHP/mysqli_connection.php	/^		$rslt=mysqli_query($linkid,$SQL);$/;"	v
+set	Perl/Class1.pm	/^sub set {$/;"	s
+value_all_do	Perl/module/mysqli_connection.pm	/^sub value_all_do$/;"	s
