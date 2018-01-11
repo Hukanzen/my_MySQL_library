@@ -105,7 +105,7 @@ sub db_fetch_assoc_array{
 sub value_all_do
 {
 	my $self=shift;
-	my ($table,$ref_value)=@_;
+	my ($table,$ref_column,$ref_value)=@_;
 	
 	my $sql1="INSERT INTO ".$table." VALUES(";
 	my $sql2="";
