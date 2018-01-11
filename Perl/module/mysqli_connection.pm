@@ -107,15 +107,11 @@ sub value_all_do
 	my $self=shift;
 	my ($table,$ref_column,$ref_value)=@_;
 	
-	my $sql1="INSERT INTO ".$table." VALUES(";
-	my $sql2="";
-	foreach(@$ref_value){
-		$sql2.=$_.",";
-	}
-	$sql2=~s/,$//;
-	my $sql3=");";
-
-	my $sql=$sql1.$sql2.$sql3;
+	
+	my $clm=join(',',@$ref_column);
+	my $val=join(',',@$ref_value);
+	
+	my $sql="INSERT INTO ".$table." (".$clm.") VALUES(".$val.");";
 
 	&db_do($self,$sql);
 
