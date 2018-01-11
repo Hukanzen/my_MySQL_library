@@ -112,6 +112,7 @@ sub value_all_do
 	foreach(@$ref_value){
 		$sql2.=$_.",";
 	}
+	$sql2=~s/,$//;
 	my $sql3=");";
 
 	my $sql=$sql1.$sql2.$sql3;
