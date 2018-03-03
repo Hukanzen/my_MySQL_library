@@ -1,7 +1,5 @@
 <?php
-/* 
-    サンプルは動いた 2017/09/22 6:04
-            */
+/* サンプルは動いた 2017/09/22 6:04 */
 
 class mysqli_connection
 {
@@ -22,22 +20,26 @@ class mysqli_connection
 		if(!$linkid) die("Failure mysqli_connect".mysqli_error($linkid));
 		/* 文字コードの指定 */
 		mysqli_set_charset($linkid,"utf8");
-		//return $linkid;
 		$this->pri_lid=$linkid;
 	}
 
 	/* エスケープ */
-	public function escape_string($SQL){
+	public function escape_string(&$string){
 		$linkid=$this->pri_lid;
-		$SQL=mysqli_real_escape_string($linkid,$SQL);
-		return $SQL;
+		$string=mysqli_real_escape_string($linkid,$string);
+	}
+	public function stripslashes_deep(&$value)
+	{
+		$value = is_array($value) ?
+					array_map('stripslashes_deep', $value) :
+					stripslashes($value);
 	}
 
 	/* クエリの作成 */
 	public function db_query($SQL){
 		$linkid=$this->pri_lid;
 		$rslt=mysqli_query($linkid,$SQL);
-		if(!$rslt) die("$SQL is Failure".mysqli_error($linkid));
+		if(!$rslt) die("$SQL is Failure! \n<br>".mysqli_error($linkid));
 		return $rslt;
 	}
 
@@ -47,7 +49,7 @@ class mysqli_connection
 		$num=mysqli_num_rows($rslt);
 		return $num;
 	}
-
+	
 	/* SQL文を投げて，データを取得し，配列で返す */
 	public function db_fetch($SQL){
 		$data=array();
@@ -63,13 +65,6 @@ class mysqli_connection
 		$aRSLT=array();
 		foreach($aSQL as $sql){
 			$rslt=$this->db_query($sql);
-			/* db_queryで行う */
-			/*
-			if(!$rslt){
-				die("$sql is Failure.".mysqli_error($linkid));
-				break;
-			}
-			*/
 			array_push($aRSLT,$rslt);
 		}
 		return $aRSLT;
